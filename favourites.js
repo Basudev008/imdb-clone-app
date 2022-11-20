@@ -4,7 +4,6 @@ export function displayFavouriteList() {
 
   // parse favourites array from local storage
   var favouritesArray = JSON.parse(myLocalStorage.getItem("favourites"));
-  console.log(favouritesArray);
 
   // if favourites has no movies, display below message
   if (!favouritesArray || favouritesArray.length == 0) {

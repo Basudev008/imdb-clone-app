@@ -2,7 +2,6 @@ export function movieInfo() {
   const myLocalStorage = window.localStorage;
   const movieInfo = document.querySelector(".movie");
 
-  console.log(myLocalStorage);
   var id = myLocalStorage.getItem("movieId");
   var movieDetails = {};
 
@@ -10,7 +9,6 @@ export function movieInfo() {
   fetch(`https://www.omdbapi.com/?i=${id}&apikey=604122d2`)
     .then((response) => response.json())
     .then((data) => {
-      console.log(data);
       movieDetails = data;
       displayMovieDetails();
     });
@@ -157,8 +155,6 @@ export function movieInfo() {
         favBtn.innerHTML = "<span>Favourite</span>";
       }
     }
-
-    console.log(favBtn);
 
     favBtn.addEventListener("click", () =>
       addToFavourite(favBtn, movieDetails.imdbID)

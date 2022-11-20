@@ -24,7 +24,6 @@ if (movieInfo) {
 
   function searchMovies() {
     var searchKey = searchBox.value;
-    console.log(searchKey.length);
     if (searchKey) {
       // if length of searchKey >= 3, use search parameter,
       // else use title parameter
@@ -34,7 +33,6 @@ if (movieInfo) {
         )
           .then((response) => response.json())
           .then((data) => {
-            console.log(data);
             if (data.Response == "True") {
               searchResult = data.Search;
               displaySearchResult();
@@ -46,7 +44,6 @@ if (movieInfo) {
         fetch(`https://www.omdbapi.com/?apikey=604122d2&t=${searchKey}`)
           .then((response) => response.json())
           .then((data) => {
-            console.log(data);
             if (data.Response == "True") {
               searchResult[0] = data;
               displaySearchResult();
@@ -80,7 +77,6 @@ if (movieInfo) {
         </div>`;
 
       searchList.appendChild(movieComponent);
-      console.log(searchList);
 
       var favouritesArray = JSON.parse(myLocalStorage.getItem("favourites"));
 
@@ -142,9 +138,7 @@ if (movieInfo) {
 
   // function to add id of movie clicked for more info
   function addIdToStorage(id) {
-    console.log("added");
     myLocalStorage.setItem("movieId", `${id}`);
-    console.log(myLocalStorage);
     window.location.assign("movieInfo.html");
     searchBox.value = "";
   }
