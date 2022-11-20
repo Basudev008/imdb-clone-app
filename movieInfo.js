@@ -7,7 +7,7 @@ export function movieInfo() {
   var movieDetails = {};
 
   // fetch details based on movie imdbID stored in the local storage
-  fetch(`http://www.omdbapi.com/?i=${id}&apikey=604122d2`)
+  fetch(`https://www.omdbapi.com/?i=${id}&apikey=604122d2`)
     .then((response) => response.json())
     .then((data) => {
       console.log(data);

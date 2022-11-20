@@ -19,7 +19,7 @@ export function displayFavouriteList() {
 
   function displayFavourite(id) {
     var searchResult = {};
-    fetch(`http://www.omdbapi.com/?i=${id}&apikey=604122d2`)
+    fetch(`https://www.omdbapi.com/?i=${id}&apikey=604122d2`)
       .then((response) => response.json())
       .then((data) => {
         searchResult = data;
