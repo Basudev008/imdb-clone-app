@@ -44,15 +44,24 @@ input {
 }
 
 .search-list {
-  margin-left: 30rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   height: 80%;
   width: 41%;
+  margin: auto;
   background-color: rgb(246, 248, 248);
 }
 
 .search-list h4,
 h5 {
   margin: 0;
+}
+
+.search-result{
+  margin: 0;
+  padding: 0;
+  width: 95%;
 }
 
 .movie-card {
